@@ -1,0 +1,38 @@
+{
+    "timeout": 600,
+    "build": {
+        "path": [
+            "../app/user",
+            "../api"
+        ]
+    },
+    "dev": {
+        "user": {
+            "path": "../app/user",
+            "command": [
+                "./user"
+            ],
+            "port": [
+                32001
+            ]
+        },
+        "api": {
+            "path": "../api",
+            "command": [
+                "./api"
+            ],
+            "wait": [
+                "user"
+            ],
+            "port": [
+                8888
+            ]
+        }
+    },
+    "stop": {
+        "name": [
+            "user",
+            "api"
+        ]
+    }
+}
